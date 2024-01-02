@@ -18,7 +18,7 @@ if (savedUsername && savedPassword) {
   existingButton.addEventListener('click', function() {
     alert('Logged in as ' + savedUsername);
   });
-  document.body.appendChild(existingButton);
+  document.getElementById('loginform').appendChild(existingButton);
 }
 else
 {
