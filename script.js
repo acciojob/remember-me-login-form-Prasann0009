@@ -1,5 +1,13 @@
-//your JS code here. If required.
-var savedUsername = localStorage.getItem('username');
+document.getElementById('loginform').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
+  var checkbox = document.getElementById('checkbox');
+
+  if (checkbox.checked) {
+    // Save details to local storage
+    var savedUsername = localStorage.getItem('username');
 var savedPassword = localStorage.getItem('password');
 
 if (savedUsername && savedPassword) {
@@ -12,20 +20,13 @@ if (savedUsername && savedPassword) {
   });
   document.body.appendChild(existingButton);
 }
-
-// Handle form submission
-document.getElementById('loginform').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  var username = document.getElementById('username').value;
-  var password = document.getElementById('password').value;
-  var checkbox = document.getElementById('checkbox');
-
-  if (checkbox.checked) {
-    // Save details to local storage
+else
+{
     localStorage.setItem('username', username);
     localStorage.setItem('password', password);
-  } else {
+}
+    }
+     else {
     // Remove saved details from local storage
     localStorage.removeItem('username');
     localStorage.removeItem('password');
